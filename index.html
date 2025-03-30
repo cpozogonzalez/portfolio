@@ -12,6 +12,44 @@
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <style>
+        /* Estilo básico para el contenedor */
+        .dropdown {
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 300px;
+            margin: 10px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Estilo para el contenedor de texto */
+        .dropdown-content {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+        }
+
+        /* Mostrar el contenido del desplegable cuando se haga clic */
+        .dropdown.active .dropdown-content {
+            display: block;
+        }
+
+        /* Estilo de la flecha */
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        /* Rotar la flecha cuando el desplegable está activo */
+        .dropdown.active .arrow {
+            transform: rotate(180deg);
+        }
+    </style>
 </head>
 
 <body>
@@ -28,10 +66,10 @@
                 <a href="#about">About</a>
             </li>
             <li>
-                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
             </li>
             <li>
-                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
             </li>
             <li>
                 <a href="#projects">Projects</a>
@@ -85,67 +123,126 @@
     </div>
     <!-- End #about -->
 
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-            <div data-date="September 2015 – September 2016">
-                <h3>Employer Name</h3>
-                <h4>Job Title</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                </p>
-            </div>
-
-            <div data-date="September 2015 – September 2016">
-                <h3>Employer Name</h3>
-                <h4>Job Title</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                </p>
-            </div>
-
-            <div data-date="September 2015 – September 2016">
-                <h3>Employer Name</h3>
-                <h4>Job Title</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- End #experience -->
-
-    <div id="education">
+    <div id="education" class="background-alt">
         <h2 class="heading">Education</h2>
+        <section id="experience-timeline">
+            <div data-date="September 2018 – July 2022">
+                <h3 >Mathematics Degree</h3>
+                <h4>University of Granada</h4>
+                <p>Graduated in Mathematics with a strong foundation in analysis, algebra, and mathematical modeling.</p>
+                <div class="dropdown" onclick="toggleDropdown('math_dropout')">
+                    <span>More info</span> <!-- Texto que acompaña la flecha -->
+                    <div class="arrow">&#9660;</div> <!-- Flecha hacia abajo -->
+                </div>
+                
+                <!-- Contenido que se desplegará -->
+                <div class="dropdown-content" id="math_dropout">
+                    <h4>University of Granada</h4>
+                    <p>​Reflecting on my journey through the Mathematics program at the University of Granada (UGR), I realize how much it has shaped my analytical abilities and problem-solving skills. The curriculum, deeply rooted in both theoretical foundations and practical applications, challenged me to think critically and adapt to complex mathematical concepts.​
+
+                        One of the most significant aspects of my experience was the emphasis on understanding the 'why' behind mathematical processes, not just the 'how.' This approach encouraged me to explore various problem-solving strategies and recognize that multiple solutions can exist for a single problem. It was enlightening to see how different methods could lead to the same conclusion, reinforcing the idea that flexibility and creativity are vital in mathematical thinking.​
+                        
+                        Collaborative projects were another highlight of my studies. Working with peers from diverse backgrounds provided fresh perspectives and fostered a deeper appreciation for teamwork. These collaborations often led to innovative solutions and underscored the importance of collective intelligence in tackling complex problems.​
+                        
+                        The UGR's commitment to research and its integration into the curriculum allowed me to engage with current mathematical advancements. This exposure not only broadened my knowledge but also inspired me to pursue topics beyond the standard syllabus, fueling a passion for continuous learning.​
+                        
+                        In essence, my time at UGR was transformative. It equipped me with a robust mathematical toolkit and instilled a mindset geared towards exploration and adaptability. I am confident that these experiences have prepared me to approach future challenges with a balanced blend of analytical rigor and creative problem-solving.​​</p>
+                </div>
+            </div>
+            <div data-date="September 2022 – July 2023">
+                <h3>MAES Master</h3>
+                <h4>University of Granada</h4>
+                <p>Master’s in Secondary Education specializing in Mathematics, focused on pedagogy and teaching methodologies.</p>
+                <div class="dropdown" onclick="toggleDropdown('maes_dropout')">
+                    <span>More info</span> <!-- Texto que acompaña la flecha -->
+                    <div class="arrow">&#9660;</div> <!-- Flecha hacia abajo -->
+                </div>
+                
+                <!-- Contenido que se desplegará -->
+                <div class="dropdown-content" id="maes_dropout">
+                    <h4>University of Granada</h4>
+                    <p>​Reflecting on my journey through the Master's Degree in Teacher Training for Compulsory and Upper Secondary Education, Vocational Education and Training (VET), and Language Teaching at the University of Granada (UGR), I recognize how this program has profoundly influenced my pedagogical approach and teaching methodologies.​
+
+                        The curriculum's comprehensive focus on developing and implementing instructional methods tailored to diverse student needs challenged me to think critically about my teaching strategies. This emphasis on adaptability encouraged me to explore various pedagogical approaches, recognizing that each student may require a unique method of engagement.​
+                        
+                        Collaborative projects were another significant aspect of my studies. Working alongside peers from diverse backgrounds provided fresh perspectives and fostered a deeper appreciation for teamwork. These collaborations often led to innovative teaching solutions and underscored the importance of collective intelligence in addressing complex educational challenges.​
+                        
+                        The program's integration of research into teaching practices allowed me to engage with current educational advancements. This exposure not only broadened my knowledge but also inspired me to pursue topics beyond the standard curriculum, fueling a passion for continuous professional development.​
+                        
+                        In essence, my time at UGR was transformative. It equipped me with a robust pedagogical toolkit and instilled a mindset geared towards exploration and adaptability. I am confident that these experiences have prepared me to approach future teaching challenges with a balanced blend of analytical rigor and creative problem-solving.​​</p>
+                </div>
+            </div>
+            <div data-date="September 2022 – February 2024">
+                <h3>FisyMath Master</h3>
+                <h4>University of Granada</h4>
+                <p>Master’s in Physics and Mathematics, specializing in advanced mathematical applications in theoretical and computational physics.</p>
+                <div class="dropdown" onclick="toggleDropdown('fisymat_dropout')">
+                    <span>More info</span> <!-- Texto que acompaña la flecha -->
+                    <div class="arrow">&#9660;</div> <!-- Flecha hacia abajo -->
+                </div>
+                
+                <!-- Contenido que se desplegará -->
+                <div class="dropdown-content" id="fisymat_dropout">
+                    <h4>University of Granada</h4>
+                    <p>Reflecting on my experience in the Master's Degree in Physics and Mathematics (FisyMat) at the University of Granada (UGR), I recognize the profound impact it has had on my analytical and problem-solving abilities. This bilingual program offers advanced academic training in specialized and multidisciplinary areas where physics and mathematics play a decisive role. ​
+
+                        The curriculum's rigorous approach to complex physical and mathematical concepts challenged me to develop a deeper understanding of the underlying principles governing these disciplines. The program's emphasis on both theoretical and applied aspects allowed me to appreciate the elegance of mathematical frameworks while exploring their practical applications in various fields.​
+                        
+                        Collaborative projects and research opportunities were integral to my studies. Engaging with peers and faculty members in diverse research initiatives provided me with fresh perspectives and fostered a collaborative spirit. These experiences highlighted the importance of interdisciplinary cooperation in advancing scientific knowledge and solving complex problems.​
+                        
+                        The UGR's commitment to research excellence, exemplified by institutions like the Carlos I Institute of Theoretical and Computational Physics, provided an inspiring environment for academic growth. This exposure to cutting-edge research motivated me to delve deeper into my areas of interest and pursue continuous learning.​
+                        
+                        In summary, my time in the FisyMat program at UGR was transformative. It equipped me with a robust foundation in physics and mathematics, enhanced my analytical skills, and instilled a passion for collaborative research and lifelong learning. I am confident that the competencies and insights gained during this program will serve as a solid foundation for my future endeavors in the scientific community.​​​</p>
+                </div>
+            </div>
+            <div data-date="December 2024 – Now a days">
+                <h3>Astrophysics PhD</h3>
+                <h4>IAA-CSIC</h4>
+                <p>I am working on my thesis within the CTLearn project, focusing on the development of a computer vision model. My research involves designing and optimizing a deep learning model for analyzing data from Cherenkov telescopes, aiming to improve the identification and classification of astrophysical events.</p>
+                <div class="dropdown" onclick="toggleDropdown('phd_dropout')">
+                    <span>More info</span> <!-- Texto que acompaña la flecha -->
+                    <div class="arrow">&#9660;</div> <!-- Flecha hacia abajo -->
+                </div>
+                
+                <!-- Contenido que se desplegará -->
+                <div class="dropdown-content" id="phd_dropout">
+                    <h4>IAA-CSIC</h4>
+                    <p>​​Reflecting on my thesis work within the CTLearn project at the IAA-CSIC, I recognize the profound impact it has had on my understanding of computer vision and deep learning applications in astrophysics. CTLearn is a Python package designed to apply deep learning techniques to data from Imaging Atmospheric Cherenkov Telescopes (IACTs), facilitating the reconstruction of events captured by these instruments. ​
+
+                        My research focuses on developing and optimizing a deep learning model to analyze data from Cherenkov telescopes, aiming to enhance the identification and classification of astrophysical events. This endeavor has deepened my comprehension of convolutional neural networks and their application to complex datasets, particularly in the context of gamma-ray astronomy. Engaging with the challenges of processing and interpreting data from IACTs has refined my analytical skills and underscored the importance of precision in scientific research.​
+                        
+                        Collaborating with the CTLearn team has provided valuable insights into interdisciplinary teamwork and the integration of diverse expertise to address complex problems. This experience has not only expanded my technical proficiency but also highlighted the significance of effective communication and collaboration in advancing scientific knowledge.​
+                        
+                        In summary, my involvement in the CTLearn project has been instrumental in shaping my approach to research and problem-solving. It has equipped me with a robust skill set in deep learning and data analysis, preparing me to contribute meaningfully to the field of astrophysics and beyond.​</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- End #education -->
+
+    <div id="experience">
+        <h2 class="heading">Experience</h2>
         <div class="education-block">
-            <h3>University of Ottawa</h3>
-            <span class="education-date">Sept 2016 - Sept 2017</span>
-            <h4>Bachelor of Science in Computer Science</h4>
+            <h3>JAE Intro - Fellow</h3>
+            <span class="education-date">2024/03 - 2024/07</span>
+            <h4>CSIC, Instituto de Astrofísica de Andalucía</h4>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                My JAE Intro project that focused on the study of high-energy pulsars using data from the Large-Sized Telescope (LST-1), the prototype of the Cherenkov Telescope Array (CTA). This project involved analyzing gamma-ray observations of pulsars, including the Crab pulsar, to investigate their emission characteristics at very high energies. The LST-1's advanced capabilities allowed for detailed observations, enhancing our understanding of pulsar behavior and contributing to the broader field of high-energy astrophysics.
+            </p>
+        </div>
+            <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>PhD Momemtum CSIC - Fellow</h3>
+            <span class="education-date">2024/03 - 2024/07</span>
+            <h4>CSIC, Instituto de Astrofísica de Andalucía</h4>
+            <p>
+                I am working on my thesis within the CTLearn project, focusing on the development of a computer vision model. My research involves designing and optimizing a deep learning model for analyzing data from Cherenkov telescopes, aiming to improve the identification and classification of astrophysical events.
             </p>
         </div>
         <!-- End .education-block -->
-
-        <div class="education-block">
-            <h3>University of Ottawa</h3>
-            <span class="education-date">Sept 2016 - Sept 2017</span>
-            <h4>Bachelor of Science in Computer Science</h4>
-            <ul>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </li>
-            </ul>
-        </div>
-        <!-- End .education-block -->
     </div>
-    <!-- End #education -->
+    <!-- End #experience -->
 
     <div id="projects" class="background-alt">
         <h2 class="heading">Projects</h2>
@@ -153,31 +250,31 @@
             <div class="row">
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/project.jpg" />
+                        <img src="images/channels4_profile.jpg"  width="300" height="300"/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
-                        <h3>Project Name Here</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                        </p>
-                        <a href="#">View Project</a>
+                        <h3>CTAO Organization</h3>
+                            <p>
+                            El Cherenkov Telescope Array Observatory (CTAO) es un proyecto internacional que busca construir el observatorio terrestre más avanzado para la astronomía de rayos gamma de muy alta energía, con telescopios en La Palma (España) y en el Desierto de Atacama (Chile). Funcionará como un observatorio abierto, facilitando el acceso global a sus datos científicos y alcanzando una sensibilidad hasta diez veces mayor que los instrumentos actuales. En enero de 2025, la Comisión Europea lo estableció como un Consorcio Europeo de Infraestructuras de Investigación (ERIC) para acelerar su desarrollo y optimizar la distribución de sus datos.
+                            </p>
+                        <a href="https://www.ctao.org/">View Project</a>
                     </div>
                     <!-- End .project-info -->
                 </div>
                 <!-- End .project -->
 
-                <div class="project shadow-large">
+                <div class="project shadow-large" styles="max-width:1000px">
                     <div class="project-image">
-                        <img src="images/project.jpg" />
+                        <img src="images/badground_porfolio.jpg"  width="300" height="250"/>                    
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
-                        <h3>Project Name Here</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-                        </p>
-                        <a href="#">View Project</a>
+                        <h3>LST Colaboration</h3>
+                            <p>
+                            ​La Colaboración del Telescopio de Gran Tamaño (LST) está formada por más de 400 científicos e ingenieros de 12 países. El LST-1, prototipo del LST, se encuentra en fase de puesta en marcha en el Observatorio del Roque de los Muchachos en La Palma, España. Este telescopio ha logrado hitos significativos, como la detección de emisiones de muy alta energía de la Nebulosa del Cangrejo y de quásares distantes , demostrando sus avanzadas capacidades.
+                            </p>
+                        <a href="https://www.lst1.iac.es/">View Project</a>
                     </div>
                     <!-- End .project-info -->
                 </div>
@@ -239,7 +336,7 @@
             <div class="row">
                 <div class="col-sm-5 copyright">
                     <p>
-                        Copyright &copy; <span id="current-year">2022</span> YOUR NAME
+                        Copyright &copy; <span id="current-year">2022</span> Cristian Pozo González
                     </p>
                 </div>
                 <div class="col-sm-2 top">
@@ -273,7 +370,21 @@
         </div>
     </footer>
     <!-- End footer -->
+    <script>
+        // Función para alternar el estado del desplegable
+        function toggleDropdown(element) {
+            var elemento = document.getElementById(element);
 
+// Verificar el estado actual del display y alternarlo
+            if (elemento.style.display === 'block') {
+                elemento.style.display = 'none'; // Cambiar a none
+            } else {
+                elemento.style.display = 'block'; // Cambiar a block
+            }
+        }
+
+
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/scripts.min.js"></script>
 </body>
